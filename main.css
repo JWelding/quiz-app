@@ -2,3 +2,11 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.popUp{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    height: 200px;
+    width: 200px;
+}
