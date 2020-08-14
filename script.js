@@ -104,14 +104,11 @@ function generateFeedbackPage() {
 function displayNextPage(){
     console.log("next");
     if (quizNotStarted){
-        console.log("quiznogo");
         quizNotStarted = false;
         displayStartPage();
     }else if(QUIZ[answers.length]){
-        console.log("quiz");
         displayQuestionPage(answers.length);
     }else{
-        console.log("end");
         displayFeedbackPage();
     }
 }
@@ -158,7 +155,6 @@ function handleSubmitQuestionForm() {
         const formData = $("form").serializeArray()
         console.log(formData);
         const answer = formData[0].value;
-        answers.push(answer);
         if (answer===QUIZ[answers.length].correctAnswer){
             popUp(`That's Right!`, "green")
         }else{
@@ -167,12 +163,10 @@ function handleSubmitQuestionForm() {
             let realAnswer = q.answers[correctIndex];
             popUp(`Wrong, correct answer was ${realAnswer}`, "red");
         }
+        answers.push(answer);
         displayNextPage();
     })
 }
-    //const and save question
-    //get value picked and push into answer array
-    //run display feedback page with const and saved question
 
 function handleClickNextQuestionButton() {
 }

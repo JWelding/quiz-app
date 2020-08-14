@@ -4,9 +4,7 @@
 }
 
 .popUp{
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    height: 200px;
-    width: 200px;
+    /* position: fixed; */
+    height: 50px;
+    width: 300px;
 }
