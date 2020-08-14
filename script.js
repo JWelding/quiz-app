@@ -168,12 +168,15 @@ function handleSubmitQuestionForm() {
     })
 }
 
-function handleClickNextQuestionButton() {
+function handleClickCloseButton(){
+    $("body").on("click", ".closeButton", event => {
+    console.log("close button");
+    $(event.currentTarget).closest(".popUp").remove();
+    })
 }
-
 function popUp(text, color){
-    let p = $("<div class = 'popUp'>").text(text).css("background-color",color).appendTo($("body"))
-    setTimeout(function(){p.remove()},3000)
+    let p = $(`<div class = "popUp">${text}<button class = "closeButton">X</button></div>`).css("background-color",color).appendTo($("body"))
+    setTimeout(function(){p.remove()},5000);
 }
 
 function handleClickRestartButton() {
@@ -190,7 +193,7 @@ function handleClickRestartButton() {
 function setupEventHandlers() {
     handleClickStartButton();
     handleSubmitQuestionForm();
-    handleClickNextQuestionButton();
+    handleClickCloseButton();
     handleClickRestartButton();
 }
 
