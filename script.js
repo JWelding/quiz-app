@@ -1,6 +1,6 @@
 const QUIZ = [
     {
-        question: "The plural of 'moose' is?",
+        question: "What is the plural of 'moose'?",
         answers: {
             a: "moosen",
             b: "moose",
@@ -79,7 +79,7 @@ function generateQuestionPage(index) {
 <form>
     <fieldset>
         <legend>
-            ${index + 1}/${QUIZ.length} ${question.question}
+            (${index + 1} /${QUIZ.length}) ${question.question}
         </legend>
         <ol>
             ${theAnswers.map(answer => `<li>
@@ -89,7 +89,7 @@ function generateQuestionPage(index) {
         </ol>
     </fieldset>
     <button type = "submit">Submit</button>
-    <p>correct:${getScore()} incorrect:${answers.length-getScore()}</p>
+    <p>Correct:${getScore()}  Incorrect:${answers.length-getScore()}</p>
 </form>
 </section>`)
 }
@@ -176,7 +176,7 @@ function handleClickCloseButton(){
 }
 function popUp(text, color){
     let p = $(`<div class = "popUp">${text}<button class = "closeButton">X</button></div>`).css("background-color",color).appendTo($("body"))
-    setTimeout(function(){p.remove()},5000);
+    setTimeout(function(){p.remove()},4000);
 }
 
 function handleClickRestartButton() {

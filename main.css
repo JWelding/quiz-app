@@ -1,9 +1,49 @@
 * {
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+    margin-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 2em;
+    color: darkblue;
+}
+
+body {
+    margin-top: 3em;
+    background: lightgrey;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+
+main {
+    margin: 2em;
+    font-size: 20px;
+    color: darkblue;
+}
+
+button {
+    font-size: 1em;
+    padding:0.5em 1.5em;
+    margin-top:2em;
+    border-radius:2em;
+    color: darkblue;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+}
+button:hover{
+    background-color:#4095c6;
+}
+
 .popUp{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: center;
     height: 50px;
-    width: 300px;
+    width: 100%;
+    font-size: 25px;
 }
