@@ -6,12 +6,16 @@ header {
     margin-top: 2em;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 2em;
+    font-size: 1em;
     color: darkblue;
 }
 
+body * {
+    box-sizing: border-box;
+}
+
 body {
-    margin-top: 3em;
+    margin-top: 2em;
     background: lightgrey;
     display: flex;
     flex-direction: column;
@@ -19,15 +23,14 @@ body {
 }
 
 main {
-    margin: 2em;
+    margin: 1em;
     font-size: 20px;
     color: darkblue;
 }
 
-button {
+form button, main>button {
     font-size: 1em;
     padding:0.5em 1.5em;
-    margin-top:2em;
     border-radius:2em;
     color: darkblue;
     background-color:#4eb5f1;
@@ -38,12 +41,46 @@ button:hover{
     background-color:#4095c6;
 }
 
+ol {
+    list-style-type: lower-latin;
+    text-align: left;
+    margin: auto;
+    width: 60%;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 2em;
+}
+
+legend {
+    font-size: xx-large;
+}
+
 .popUp{
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
-    align-items: center;
-    height: 50px;
+    height: 100%;
     width: 100%;
     font-size: 25px;
+    padding: 10px;
+}
+
+.popUp button {
+    display: inline-block;
+    font-size: 15px;
+    position: absolute;
+    right: 1em;
+    /* margin-left:2em; */
+    border-radius:50%;
+    color :white;
+    background-color: black;
+    text-align:center;
+    transition: all 0.2s;
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+}
+
+.popUp p {
+    display: inline-block;
+    margin: auto;
 }

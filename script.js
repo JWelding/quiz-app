@@ -79,7 +79,7 @@ function generateQuestionPage(index) {
 <form>
     <fieldset>
         <legend>
-            (${index + 1} /${QUIZ.length}) ${question.question}
+            (${index + 1}/${QUIZ.length}) ${question.question}
         </legend>
         <ol>
             ${theAnswers.map(answer => `<li>
@@ -156,12 +156,12 @@ function handleSubmitQuestionForm() {
         console.log(formData);
         const answer = formData[0].value;
         if (answer===QUIZ[answers.length].correctAnswer){
-            popUp(`That's Right!`, "green")
+            popUp(`${answers.length+1}. That's Right!`, "#90EE90")
         }else{
             let q = QUIZ[answers.length];
             let correctIndex = QUIZ[answers.length].correctAnswer;
             let realAnswer = q.answers[correctIndex];
-            popUp(`Wrong, correct answer was ${realAnswer}`, "red");
+            popUp(`${answers.length+1}. Wrong, correct answer was ${realAnswer}!`, "#FF6347");
         }
         answers.push(answer);
         displayNextPage();
@@ -175,14 +175,15 @@ function handleClickCloseButton(){
     })
 }
 function popUp(text, color){
-    let p = $(`<div class = "popUp">${text}<button class = "closeButton">X</button></div>`).css("background-color",color).appendTo($("body"))
-    setTimeout(function(){p.remove()},4000);
+    let p = $(`<div class = "popUp"><p>${text}</p><button class = "closeButton">X</button></div>`).css("background-color",color).appendTo($("body"))
+    // setTimeout(function(){p.remove()},4000);
 }
 
 function handleClickRestartButton() {
     $("main").on("click", "#restartButton", event => {
        answers.length = 0;
        quizNotStarted = true;
+       $(".popUp").remove();
         displayNextPage();
     })
 }
