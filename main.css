@@ -45,7 +45,7 @@ ol {
     list-style-type: lower-latin;
     text-align: left;
     margin: auto;
-    width: 60%;
+    width: 30%;
 }
 
 fieldset {
@@ -54,7 +54,7 @@ fieldset {
 }
 
 legend {
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .popUp{
